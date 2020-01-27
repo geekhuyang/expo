@@ -10,9 +10,10 @@ import Colors from './constants/Colors';
 const AppNavigator = createStackNavigator(
   {
     Select: { screen: SelectScreen, path: 'select/:tests' },
-    RunTests,
+    RunTests: { screen: RunTests, path: '' },
   },
   {
+    initialRouteName: 'RunTests',
     headerMode: Platform.select({ web: 'screen', default: undefined }),
     transitionConfig: global.DETOX
       ? () => ({
